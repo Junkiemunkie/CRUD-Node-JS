@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <title>
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+<body>
+
+<div class="container">
+    <% users.forEach(function(user){ %>
+    <form method="POST" action="/update/<%=user.user_id%>" autocomplete="off">
+        <div class="form-group">
+            <label><b>User name</b></label>
+            <input type="text" name="name" class="form-control" value="<%= user.user_name %>">
+        </div>
+        <div class="form-group">
+            <label><b>User email</b></label>
+            <input type="email" name="email" class="form-control" value="<%= user.user_email %>">
+        </div><div class="form-group">
+            <label><b>User password</b></label>
+            <input type="password" name="password" class="form-control" value="<%= user.user_password %>">
+        </div>
+        <input type="submit" name="update" value="update" class="btn btn-success">
+    </form>
+    <% }) %>
+
+</div>
+
+</body>
+
+</html>
